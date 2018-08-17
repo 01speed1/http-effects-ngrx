@@ -1,0 +1,11 @@
+<div class="navbar-item">
+    <input 
+        #input 
+        (keyup.enter)="searchUser(input.value)" 
+        class="input" 
+        type="text" 
+        placeholder="User ID">
+    <a
+        (click)="searchUser(input.value)" 
+        class="button is-success is-hovered">Buscar</a>
+</div> 
