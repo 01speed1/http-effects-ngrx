@@ -21,4 +21,12 @@ export class UsuarioService {
             
     }
 
+    getUserById(id:string) {
+        return this.http
+            .get(`${this.api}/users/${id}`)
+            .pipe(map( res =>  res['data'] ))
+    }
+
+    
+
 }

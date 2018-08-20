@@ -1,6 +1,29 @@
+<div 
+  *ngIf="loading"
+  class="notification is-primary">
+  <button class="delete"></button>
+  <i class="fas fa-spinner fa-pulse fa-2x"></i>
+  <br>
+  Cargando Usuarios
+</div>
 
 
-<div class="columns">
+<article 
+  *ngIf="error"
+  class="message is-danger">
+  <div class="message-header">
+    Error: {{ error.status }}
+    <button class="delete"></button>
+  </div>
+  <div class="message-body">
+    {{ error.message }}  </div>
+</article>
+
+
+
+<div
+  *ngIf="!loading"
+  class="columns">
     <div class="column">
       
     </div>

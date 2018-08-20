@@ -22,7 +22,7 @@
     "@angular/router": "^6.0.3",
     "@ngrx/effects": "^6.1.0",
     "@ngrx/store": "^6.0.1",
-    "@ngrx/store-devtools": "^6.0.1",
+    "@ngrx/store-devtools": "^6.1.0",
     "compass-mixins": "^0.12.10",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",

@@ -1,48 +1,50 @@
 import { Usuario } from './../../models/usuario.model';
-import * as fromUariosActions from '../actions';
+import * as fromUsuariosActions from '../actions';
 
-export interface IUsuarioState {
-    users: Usuario[];
-    loadedUsers: boolean;
+export interface IUserState {
+    user: Usuario;
+    loadedUser: boolean;
     loading: boolean;
     error: any;
 };
 
-const initialState: IUsuarioState = {    
-    users: [],
-    loadedUsers:false,
+const initialState: IUserState = {    
+    user: null,
+    loadedUser:false,
     loading: false,
     error: null
         
 };
 
-export function UsuariosReducer(
+export function UsuarioReducer(
     state = initialState, 
-    action: fromUariosActions.UsuariosActions ): IUsuarioState {
+    action: fromUsuariosActions.UsuarioActions ): IUserState {
     switch (action.type) {
-        case fromUariosActions.UsuariosActionTypes.CARGAR_USUARIOS: 
+        case fromUsuariosActions.UsuarioActionTypes.CARGAR_USUARIO: 
             return {
                 ...state,
                 loading:true,
                 error: null
             };
-        case fromUariosActions.UsuariosActionTypes.CARGAR_USUARIO_SUCCESS:
+        case fromUsuariosActions.UsuarioActionTypes.CARGAR_USUARIO_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                loadedUsers:true,
-                users: [...action.usuarios]
+                loadedUser:true,
+                user: {...action.usuario}
             };
-        case fromUariosActions.UsuariosActionTypes.CARGAR_USUARIO_FAIL:
+        case fromUsuariosActions.UsuarioActionTypes.CARGAR_USUARIO_FAIL:
             return {
                 ...state,
-                loadedUsers:false,
+                loadedUser:false,
                 loading:false,
                 error: {
                     status: action.payload.status,
                     message: action.payload.message,
                     url: action.payload.url
-                }
+                },
+                user: null
+
                 
             }
         

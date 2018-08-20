@@ -17,12 +17,12 @@ export enum UsuariosActionTypes {
 export class CargarUsuarios implements Action {
     readonly type = UsuariosActionTypes.CARGAR_USUARIOS;
 }
-export class CargarUsuarioFail implements Action {
+export class CargarUsuariosFail implements Action {
     readonly type = UsuariosActionTypes.CARGAR_USUARIO_FAIL;
 
     constructor(public payload: any) { }
 }
-export class CargarUsuarioSuccess implements Action {
+export class CargarUsuariosSuccess implements Action {
     readonly type = UsuariosActionTypes.CARGAR_USUARIO_SUCCESS;
 
     constructor(public usuarios: Usuario[]) { }
@@ -37,5 +37,5 @@ export class CargarUsuarioSuccess implements Action {
  */
 export type UsuariosActions
                         = CargarUsuarios
-                        | CargarUsuarioFail
-                        | CargarUsuarioSuccess;
+                        | CargarUsuariosFail
+                        | CargarUsuariosSuccess;
